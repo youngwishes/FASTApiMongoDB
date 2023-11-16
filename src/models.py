@@ -18,7 +18,7 @@ class FormModelTemplate(BaseModel):
                 "lead_email": "email",
                 "phone": "phone",
                 "order_date": "date",
-                "text": "Some info in any format you want",
+                "message": "text",
             }
         },
     )
