@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    image: "mongo-app"
+    container_name: "app"
+    command: uvicorn src.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/app
+    networks:
+      backend:
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=${MONGO_DB}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - AUTHENTICATION_DATABASE=${AUTHENTICATION_DATABASE}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+    env_file:
+      - .env
+    networks:
+      backend:
+
+volumes:
+  mongo-data:
+
+networks:
+  backend:
+    driver: bridge
