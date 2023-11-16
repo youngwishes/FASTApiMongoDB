@@ -172,6 +172,17 @@ test = ["aiohttp (<3.8.6)", "mockupdb", "motor[encryption]", "pytest (>=7)", "to
 zstd = ["pymongo[zstd] (>=4.5,<5)"]
 
 [[package]]
+name = "phonenumbers"
+version = "8.13.25"
+description = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+optional = false
+python-versions = "*"
+files = [
+    {file = "phonenumbers-8.13.25-py2.py3-none-any.whl", hash = "sha256:7a57cceb8145d3099a0cda7a1f2581b6829936069224790be5de0adf14b39f13"},
+    {file = "phonenumbers-8.13.25.tar.gz", hash = "sha256:4ae2d2e253a4752a269ae1147822b9aa500f14b2506a91f884e68b136901f128"},
+]
+
+[[package]]
 name = "pydantic"
 version = "2.5.1"
 description = "Data validation using Python type hints"
@@ -500,4 +511,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "53153fd3af197e7bcb96cd2666294f8b829edbbc3741c2e82f605a060d592b8e"
+content-hash = "e0513aabbde7f9808a80ffebcc1d4c1ec2b79391be1ef3353182dfcb2089cf23"

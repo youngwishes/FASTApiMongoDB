@@ -25,10 +25,7 @@ services:
     environment:
       - MONGO_INITDB_DATABASE=${MONGO_DB}
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
-      - AUTHENTICATION_DATABASE=${AUTHENTICATION_DATABASE}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
-    env_file:
-      - .env
     networks:
       backend:
 
